@@ -2,13 +2,21 @@ package com.devopsusach2020.model;
 
 import java.io.Serializable;
 
+/**
+ * clase que representa el objeto Pais
+ * @author ABMUNOZ
+ *
+ */
 public class Pais implements Serializable{
 
 	/**
-	 * 
+	 * serializacion de la clase
 	 */
 	private static final long serialVersionUID = -2988002029080131424L;
 	
+	/**
+	 * definicion de atributos
+	 */
 	private int deaths;
 	private int confirmed;
 	private String date;
@@ -17,7 +25,9 @@ public class Pais implements Serializable{
 	private int recovered;
 	private int active;
 	
-	
+	/**
+	 * metodos accesadores
+	 */
 	public String getMensaje() {
 		return mensaje;
 	}

@@ -2,17 +2,29 @@ package com.devopsusach2020.model;
 
 import java.io.Serializable;
 
+/**
+ * clase que representa el objeto mundial
+ * @author ABMUNOZ
+ *
+ */
 public class Mundial implements Serializable {
 
 	/**
-	 * 
+	 * serializacion de clase
 	 */
 	private static final long serialVersionUID = 3908000903498620526L;
 	
+	/**
+	 * definicion de atributos
+	 */
 	private int totalconfirmed;
 	private int totaldeaths;
 	private int totalrecovered;
 	
+	/**
+	 * metodos accesadores
+	 * 
+	 */
 	public int getTotalConfirmed() {
 		return totalconfirmed;
 	}
