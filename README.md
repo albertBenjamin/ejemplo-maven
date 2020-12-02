@@ -2,7 +2,7 @@
 prueba confirmando
 ## Windows
 
-prueba circle ci
+prueba
 
 ### Compile Code
 * ./mvnw.cmd clean compile -e
