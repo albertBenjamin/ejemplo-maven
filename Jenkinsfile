@@ -23,6 +23,14 @@ pipeline {
 				}
             }
         }
+	    	  stage('SonarQube analysis') {
+		steps {
+				withSonarQubeEnv('sonar') 
+				{ 
+				  bat './mvnw.cmd org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+				}
+			}
+	   }
 		stage('Run Jar') {
             steps {
 				dir('C:\\Users\\AlbertMunoz\\Documents\\cursos\\devops\\ejemplo-maven'){
