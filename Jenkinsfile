@@ -4,27 +4,21 @@ pipeline {
     stages {
         stage('Compile Code') {
             steps {
-				dir('C:\\Users\\AlbertMunoz\\Documents\\cursos\\devops\\ejemplo-maven'){
-					bat './mvnw.cmd clean compile -e'
-				}   
+					bat './mvnw.cmd clean compile -e' 
             }
         }
 		stage('Test Code') {
             steps {
-				dir('C:\\Users\\AlbertMunoz\\Documents\\cursos\\devops\\ejemplo-maven'){
 					bat './mvnw.cmd clean test -e'
-				}
             }
         }
 		stage('Jar Code') {
             steps {
-				dir('C:\\Users\\AlbertMunoz\\Documents\\cursos\\devops\\ejemplo-maven'){
 					bat './mvnw.cmd clean package -e'
-				}
             }
         }
-	    	  stage('SonarQube analysis') {
-		steps {
+	   stage('SonarQube analysis') {
+	        steps {
 				withSonarQubeEnv('sonar') 
 				{ 
 				  bat './mvnw.cmd org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
@@ -33,9 +27,7 @@ pipeline {
 	   }
 		stage('Run Jar') {
             steps {
-				dir('C:\\Users\\AlbertMunoz\\Documents\\cursos\\devops\\ejemplo-maven'){
 					bat 'start mvnw.cmd spring-boot:run'
-				}
             }
         }
 		stage('Testing Application') {
